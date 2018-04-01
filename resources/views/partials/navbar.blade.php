@@ -17,6 +17,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/posts">Posts</a>
       </li>
+    </ul><!-- Main Navlinks -->
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/posts/create" class="btn btn-primary">Create Post</a></li>
     </ul>
   </div>
 </nav>
