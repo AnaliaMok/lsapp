@@ -9,10 +9,19 @@
     </div>
     <div class="form-group">
       {{ Form::label('body', 'Body') }}
-      {{ Form::textarea('body', $post->body, ['id' => 'post-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) }}
+      {{ Form::textarea('body', $post->body, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) }}
     </div>
     <!-- Spoofing PUT request -->
     {{ Form::hidden('_method', 'PUT') }}
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
   {!! Form::close() !!}
+@endsection
+
+@section('scripts')
+  <script>
+    if(document.getElementById('article-ckeditor') != null){
+      // CKEDITOR.destroy('article-ckeditor');
+      CKEDITOR.replace( 'article-ckeditor' );
+    }
+  </script>
 @endsection

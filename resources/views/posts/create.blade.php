@@ -9,8 +9,21 @@
     </div>
     <div class="form-group">
       {{ Form::label('body', 'Body') }}
-      {{ Form::textarea('body', '', ['id' => 'post-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) }}
+      {{ Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Body Text']) }}
     </div>
     {{ Form::submit('Submit', ['class' => 'btn btn-primary']) }}
   {!! Form::close() !!}
+@endsection
+
+@section('scripts')
+  <script>
+    if(document.getElementById('article-ckeditor') != null){
+      // CKEDITOR.destroy('article-ckeditor');
+      //CKEDITOR.replace( 'article-ckeditor' );
+      try {
+        CKEDITOR.instances['article-ckeditor'].destroy(true);
+      } catch (e) { }
+        CKEDITOR.replace('article-ckeditor');
+      }
+  </script>
 @endsection
