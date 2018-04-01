@@ -6,7 +6,7 @@
     @foreach($posts as $post)
       <div class="card card-block bg-faded" style="padding:1rem;margin-bottom:1rem;">
         <h3 class="card-title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h3>
-        <small>{{$post->created_at}}</small>
+        <small>Written on {{$post->created_at}} by {{$post->user->name}}</small>
       </div>
     @endforeach
     {{$posts->links()}}

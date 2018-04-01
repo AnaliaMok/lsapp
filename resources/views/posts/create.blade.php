@@ -17,13 +17,10 @@
 
 @section('scripts')
   <script>
-    if(document.getElementById('article-ckeditor') != null){
+    // FIXME: Broken after addition of Laravel Auth. Might need to do Laravel Auth from the beginner of
+    // this project's setup before inclusion of the ckeditor provider
+    //if(document.getElementById('article-ckeditor') != null){
       // CKEDITOR.destroy('article-ckeditor');
       //CKEDITOR.replace( 'article-ckeditor' );
-      try {
-        CKEDITOR.instances['article-ckeditor'].destroy(true);
-      } catch (e) { }
-        CKEDITOR.replace('article-ckeditor');
-      }
   </script>
 @endsection
